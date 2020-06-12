@@ -1,0 +1,337 @@
+@import 'variables';
+
+*{
+  outline: none;
+}
+a:focus, a:hover, input:focus, input:hover {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  @import 'MediaQueries/main';
+  overflow-x: hidden;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #0C3362;
+  width: 100%;
+  padding: 14px 0;
+  z-index: 999;
+}
+
+.nav-row {
+  display: flex;
+  display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.phone {
+  display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  margin-left: auto;
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1;
+
+  color: #FFFFFF;
+  svg {
+    margin-right: 4px;
+    path {
+      transition: .3s;
+      
+    }
+  }
+  transition: .3s;
+  &:hover {
+    color: #38C86E;
+    svg path {
+      fill: #38C86E;
+    }
+  }
+}
+
+.head {
+    min-height: calc(100vh - 310px);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: url('../images/bg.jpg') no-repeat center top;
+  background-size: cover;
+  padding-top: 136px;
+  padding-bottom: 56px;
+}
+
+.head-form {
+  max-width: 473px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
+  .top {
+    background: #0C3362;
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1;
+        padding: 26px 15px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    
+  }
+  &.verification {
+    .top {
+    }
+    .submit {
+      width: 222px;
+      margin-top: 45px;
+    }
+    .content {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+    p {
+        text-align: center;
+      font-family: SF Pro Display;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 18px;
+      text-align: center;
+      color: #94959A;
+      margin-bottom: 16px;
+    
+      a {
+        text-decoration: underline;
+        color: #4391FF;
+      }
+      &.verification-info {
+    color: #000000;
+  a {
+    color: #5AC86D;
+  }
+}
+    }
+  }
+  .content {
+    padding: 48px 56px 40px;
+    .label {
+      background: #FFFFFF;
+      border: 1px solid #C6C8D4;
+      box-sizing: border-box;
+      border-radius: 3px;
+      margin-bottom: 24px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      input {
+        display: block;
+        width: 100%;
+        font-family: SF Pro Display;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px;
+        color: #000000;
+        padding: 13px 16px 11px;
+        border: 0;
+        border-radius: 0;
+        &::placeholder {
+          transition: .3s;
+           color: #94959A;
+        }
+        
+        &:focus {
+          
+          &::placeholder {
+            font-size: 11px;
+            line-height: 18px;
+            transform:  translateY(-15px);
+//            text-indent: 500px; transition: text-indent 0.3s ease;
+          }
+        }
+      }
+    }
+  }
+  .show_pass {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+  }
+  .submit {
+    width: 167px;
+    height: 51px;
+    background: #38C86E;
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0;
+    transition: .3s;
+    &:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    &:hover {
+      transform: translateY(5%);
+    }
+  }
+}
+
+#checkbox {
+  display: none;
+  +label {
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 135%;
+    color: #000000;
+    margin-top: 10px;
+    display: block;
+//    width: 100%;
+    padding-left: 40px;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 32px;
+    &:before {
+      content: "";
+      background: url('../images/check.svg') no-repeat center;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: .7;
+      filter: grayscale(1);
+    }
+  }
+  &:checked {
+    +label {
+      &:before  {
+        filter: grayscale(0);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.form-footer {
+  text-align: center;
+  border-top: 1px solid #E3E4EB;
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  color: #94959A;
+  margin: 0 56px;
+  padding: 15px 0;
+  p {
+    margin: 0;
+  }
+  a {
+    text-decoration: underline;
+    color: #4391FF;
+  }
+}
+
+.footer {
+  font-family: SF Pro Display;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 18px;
+text-align: center;
+padding: 48px 0;
+/* black */
+
+color: #000000;
+}
+
+.number-inputs {
+  display: flex;
+  input {
+    flex-grow: 1;
+    width: 46px;
+    height: 62px;
+    background: #FFFFFF;
+    border: 1px solid #E3E4EB;
+    box-sizing: border-box;
+    border-radius: 3px;
+    margin: 0 8px;
+    text-align: center;
+  }
+  margin-bottom: 24px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+
+
+.reset-pass {
+  display: block;
+  
+font-family: SF Pro Display;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 135%;
+text-decoration-line: underline;
+transition: .3s;
+color: #1B91FF;
+  margin-bottom: 32px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.capcha {
+  margin-bottom: 30px;
+}
+
+.recovery-item {
+  text-align: center;
+  .img {
+    margin-bottom: 25px;
+  }
+  p {
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 25px;
+    text-align: center;
+    color: #000000;
+
+  }
+}

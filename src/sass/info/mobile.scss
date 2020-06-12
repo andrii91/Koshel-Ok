@@ -1,0 +1,21 @@
+& {
+  .phone {
+    span {
+      display: none;
+    }
+  }
+  .logo svg {
+    width: 117px;
+    height: 32px;
+  }
+  .head-form .content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .number-inputs input {
+    margin: 0 3px;
+  }
+  .head {
+    overflow-x: hidden;
+  }
+}
